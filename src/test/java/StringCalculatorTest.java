@@ -45,4 +45,9 @@ public class StringCalculatorTest {
     public void testStringWithNewRow(){
         Assertions.assertEquals(10,calculator.add("2\n5,3"));
     }
+
+    @Test
+    public void testDifferentDivider(){
+        Assertions.assertEquals(3,calculator.add("//;\n1;2"));
+    }
 }
