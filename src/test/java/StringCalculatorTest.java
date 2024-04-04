@@ -30,4 +30,14 @@ public class StringCalculatorTest {
     public void testWrongAnswer(){
         Assertions.assertNotEquals(10,calculator.add("5,3"));
     }
+
+    @Test
+    public void testThreeNumbers(){
+        Assertions.assertEquals(6,calculator.add("1,2,3"));
+    }
+
+    @Test
+    public void testTenNumbers(){
+        Assertions.assertEquals(10,calculator.add("1,1,1,1,1,1,1,1,1,1"));
+    }
 }
