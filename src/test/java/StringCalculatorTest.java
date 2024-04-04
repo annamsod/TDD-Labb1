@@ -50,4 +50,18 @@ public class StringCalculatorTest {
     public void testDifferentDivider(){
         Assertions.assertEquals(3,calculator.add("//;\n1;2"));
     }
+
+    @Test
+    public void testOnlyNegativeNumber(){
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calculator.add("-8"));
+        Assertions.assertEquals("Negatives not allowed: -8", exception.getMessage());
+    }
+
+    @Test
+    public void testNegativeNumber(){
+        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> calculator.add("1,-2"));
+        Assertions.assertEquals("Negatives not allowed: -2", exception.getMessage());
+    }
 }

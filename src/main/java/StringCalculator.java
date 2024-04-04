@@ -1,6 +1,6 @@
 public class StringCalculator {
 
-    public int add(String input) {
+    public int add(String input) throws IllegalArgumentException {
         int sum=0;
         if(!input.isEmpty()) {
             String[] numbers;
@@ -13,7 +13,11 @@ public class StringCalculator {
                 numbers = input.split("[, \n]");
             }
             for (String number : numbers) {
-                sum += Integer.parseInt(number);
+                int num = Integer.parseInt(number);
+                if(num<0){
+                    throw new IllegalArgumentException("Negatives not allowed: " + num);
+                }
+                sum += num;
             }
         }
         return sum;
