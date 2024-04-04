@@ -1,7 +1,13 @@
 public class StringCalculator {
 
     public int add(String input) {
-        //TODO implement
-        return 0;
+        int sum=0;
+        if(!input.isEmpty()) {
+            String [] numbers = input.split(",");
+            for (String number : numbers) {
+                sum += Integer.parseInt(number);
+            }
+        }
+        return sum;
     }
 }
